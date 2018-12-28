@@ -17,7 +17,7 @@ URL | Metodo | Descrizione
 #### Lista dei libri
 Header
 ```
-Authentication: Bearer ...
+Authorization: Bearer ...
 Accept: application/json
 ```
 Response di esempio
@@ -70,7 +70,7 @@ Response di esempio
 ##### _il permesso library.create è necessario_
 Header
 ```
-Authentication: Bearer ...
+Authorization: Bearer ...
 Accept: application/json
 ```
 
