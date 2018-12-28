@@ -1,0 +1,15 @@
+<aside class="logo">
+
+	{% assign link = '/' %}
+	{% assign prompt = 'Vai alla Home' %}
+
+	<a href="{{ link | prepend: site.baseurl | prepend: site.url }}">
+		<img src="{{ site.logo_url }}" class="logo-avatar">
+	</a>
+	<span class="logo-prompt code">{{ prompt }}</span>
+
+	<div class="center">
+		<h1>Open sPaz</h1>
+	</div>
+
+</aside>
