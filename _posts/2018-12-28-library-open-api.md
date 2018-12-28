@@ -18,6 +18,7 @@ URL | Metodo | Descrizione
 Header
 ```
 Authentication: Bearer ...
+Accept: application/json
 ```
 Response di esempio
 ```json
@@ -61,3 +62,42 @@ Response di esempio
 ```
 
 <div class="divider"></div>
+
+<div id="books_post"></div>
+
+### POST /books
+#### Creazione nuovo libro
+##### _il permesso library.create è necessario_
+Header
+```
+Authentication: Bearer ...
+Accept: application/json
+```
+
+Body
+```
+isbn : valid isbn
+category_id : valid category ID
+title : book title
+author : book author
+publishedDate : book published date
+```
+
+Response di esempio
+```json
+{
+  "success": true //Libro creato
+}
+```
+oppure
+```json
+{
+  "message": "The given data was invalid.", 
+  //Errore nella validazione del body
+  "errors": {
+    "isbn": [
+      "isbn è stato già utilizzato."
+    ]
+  }
+}
+```
