@@ -3,8 +3,8 @@
 	{% assign link = '/' %}
 	{% assign prompt = 'Vai alla Home' %}
 
-	<a href="{{ link | prepend: site.baseurl | prepend: site.url }}">
-		<img src="{{ site.logo_url }}" class="logo-avatar">
+	<a href="{{ link | prepend: site.baseurl | prepend: site.url }}" style="border-bottom: 0px;">
+		<img src="{{ site.logo_url }}">
 	</a>
 	<span class="logo-prompt code">{{ prompt }}</span>
 

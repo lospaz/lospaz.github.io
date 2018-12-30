@@ -1,0 +1,1 @@
+![Banner](https://github.com/lospaz/lospaz.github.io/blob/b31258cae3d6bc6e00039251e69c0c9310cc6313/assets/banner_gif.gif?raw=true)
