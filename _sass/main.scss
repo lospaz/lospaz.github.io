@@ -182,14 +182,15 @@ pre {
   font-size: 0.8rem;
   line-height: 1.4;
   white-space: pre;
-  background-color: #2C3239;
+  color: #000;
+  background-color: #fff;
   overflow-x: auto;
   border: 1px solid #ddd;
   padding: 1rem;
   code {
     font-size: 100%;
     color: inherit;
-    background-color: #2C3239;
+    background-color: #fff;
     padding: 0;
   }
 }
@@ -198,7 +199,8 @@ table {
   table-layout: fixed;
   margin: 45px 0;
   thead {
-    background-color: #21272d;
+    background-color: #fff;
+    color: #000;
   }
   th {
     text-align: left;
@@ -207,6 +209,7 @@ table {
   }
   td {
     padding: 4px 0;
+
   }
 }
 iframe {
