@@ -10,6 +10,10 @@ URL | Metodo | Descrizione
 --- | --- | ---
 [/books](#books_get) | GET | Lista dei libri
 [/books](#books_post) | POST | Nuovo libro
+[/books/{id}](#book_get) | GET | Dettagli singolo libro
+[/books/{id}](#book_put) | PUT | Modifica singolo libro
+[/books/{id}](#book_delete) | DELETE | Cancellazione singolo libro
+[/categories](#categories_get) | GET | Lista delle categorie presenti
 
 <div id="books_get"></div>
 
@@ -99,5 +103,143 @@ oppure
       "isbn è stato già utilizzato."
     ]
   }
+}
+```
+
+<div class="divider"></div>
+
+<div id="book_get"></div>
+
+### GET /books/{id}
+#### Dettagli singolo libro
+Header
+```
+Authorization: Bearer ...
+Accept: application/json
+```
+
+Response di esempio
+
+```json
+{
+  "success": true,
+  "book": {
+    "id": 431,
+    "category_id": 4,
+    "title": "Cecilia",
+    "author": "Linda Ferri",
+    "isbn": "9788876418518",
+    "publishedDate": "2009",
+    "created_at": "2018-11-04 13:33:19",
+    "updated_at": "2018-11-04 13:33:19",
+    "category": {
+      "id": 4,
+      "name": "Lingua"
+    }
+  }
+}
+```
+
+<div class="divider"></div>
+
+<div id="book_put"></div>
+
+### PUT /books/{id}
+#### Modifica singolo libro
+##### _il permesso library.edit è necessario_
+Header
+```
+Authorization: Bearer ...
+Accept: application/json
+```
+
+Body
+```
+isbn : valid isbn
+category_id : valid category ID
+title : book title
+author : book author
+publishedDate : book published date
+```
+
+Response di esempio
+```json
+{
+  "success": true,
+  "book": {
+    "id": 431,
+    "category_id": 4,
+    "title": "Cecilia",
+    "author": "Linda Ferri",
+    "isbn": "9788876418518",
+    "publishedDate": "2009",
+    "created_at": "2018-11-04 13:33:19",
+    "updated_at": "2018-11-04 13:33:19",
+    "category": {
+      "id": 4,
+      "name": "Lingua"
+    }
+  }
+}
+```
+
+<div class="divider"></div>
+
+<div id="book_delete"></div>
+
+### DELETE /books/{id}
+#### Cancellazione singolo libro
+##### _il permesso library.delete è necessario_
+Header
+```
+Authorization: Bearer ...
+Accept: application/json
+```
+
+Body
+```
+isbn : valid isbn
+category_id : valid category ID
+title : book title
+author : book author
+publishedDate : book published date
+```
+
+Response di esempio
+```json
+{
+  "success": true
+}
+```
+
+<div class="divider"></div>
+
+<div id="categories_get"></div>
+
+### GET /categories
+#### Lista delle categorie presenti
+Header
+```
+Authorization: Bearer ...
+Accept: application/json
+```
+Response di esempio
+```json
+{
+  "success": true,
+  "categories": [
+    {
+      "id": 2,
+      "name": "Classici",
+      "created_at": "2018-11-04 13:33:13",
+      "updated_at": "2018-11-04 13:33:13"
+    },
+    {
+      "id": 3,
+      "name": "Enciclopedia",
+      "created_at": "2018-11-04 13:33:13",
+      "updated_at": "2018-11-04 13:33:13"
+    }
+  ]
 }
 ```
